@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Student Tracker</title>
+
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+	<h1>Student Tracker</h1>
+	<hr>
+	<h2>Update Student</h2>
+
+	<form action="#" th:action="@{/save}" th:object="${student}"
+		method="POST">
+
+		<!-- Add hidden form field to handle update -->
+		<input type="hidden" th:field="*{id}" />
+		<input type="text" th:field="*{rollno}" class="form-control mb-4 col-4" placeholder="roll no">
+		<input type="text" th:field="*{studentName}" class="form-control mb-4 col-4" placeholder="Student name">
+		<input type="text" th:field="*{lecture}" class="form-control mb-4 col-4" placeholder="Lecture">
+		<input type="text" th:field="*{attend}" class="form-control mb-4 col-4" placeholder="Attend">
+		<button type="submit" class="btn btn-info col-2"> Update Student</button>
+	</form>
+
+	<hr>
+
+	<a th:href = "@{/}"> Back to Student List</a>
+</div>
+</body>
+</html>
